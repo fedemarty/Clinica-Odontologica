@@ -15,7 +15,12 @@ import service.OdontologoService;
  * Patrón DADO-CUANDO-ENTONCES para claridad
  */
 public class OdontologoTestService {
-    
+
+    private void imprimirSeparador(String testName) {
+        System.out.println("\n==============================================");
+        System.out.println("COMIENZA TEST DE: " + testName);
+        System.out.println("==============================================");
+    }
     /**
      * TEST - Guardar Odontólogo
      * Valida CRUD: inserción con ID auto-generado
@@ -23,6 +28,8 @@ public class OdontologoTestService {
      */
     @Test
     public void guardarYBuscarOdontologo(){
+        imprimirSeparador("guardarYBuscarOdontologo");
+
         // DADO - Configuración inicial de BD y servicio
         BD.crearTablas();
         OdontologoService odontologoService = new OdontologoService(new OdontologoDAOH2());
@@ -39,6 +46,8 @@ public class OdontologoTestService {
     
     @Test
     public void buscarOdontologoPorId(){
+        imprimirSeparador("buscarOdontologoPorId");
+
         // DADO
         BD.crearTablas();
         OdontologoService odontologoService = new OdontologoService(new OdontologoDAOH2());
@@ -54,6 +63,8 @@ public class OdontologoTestService {
     
     @Test
     public void listarOdontologos(){
+        imprimirSeparador("listarOdontologos");
+
         // DADO
         BD.crearTablas();
         OdontologoService odontologoService = new OdontologoService(new OdontologoDAOH2());
@@ -71,6 +82,8 @@ public class OdontologoTestService {
     
     @Test
     public void eliminarOdontologo(){
+        imprimirSeparador("eliminarOdontologo");
+
         // DADO
         BD.crearTablas();
         OdontologoService odontologoService = new OdontologoService(new OdontologoDAOH2());
@@ -88,6 +101,8 @@ public class OdontologoTestService {
     
     @Test
     public void buscarOdontologoPorMatricula(){
+        imprimirSeparador("buscarOdontologoPorMatricula");
+
         // DADO
         BD.crearTablas();
         OdontologoService odontologoService = new OdontologoService(new OdontologoDAOH2());
