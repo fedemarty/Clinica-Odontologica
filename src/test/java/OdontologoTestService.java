@@ -136,7 +136,7 @@ public class OdontologoTestService {
         
         // ENTONCES - Debe rechazar el guardado
         Assertions.assertNull(resultado, "No debería guardar odontólogo sin nombre");
-        System.out.println("✅ Validación correcta: Rechazó odontólogo sin nombre");
+        System.out.println("Validación correcta: Rechazó odontólogo sin nombre");
     }
     
     /**
@@ -157,7 +157,7 @@ public class OdontologoTestService {
         
         // ENTONCES - Debe rechazar el guardado
         Assertions.assertNull(resultado, "No debería guardar odontólogo sin matrícula");
-        System.out.println("✅ Validación correcta: Rechazó odontólogo sin matrícula");
+        System.out.println("Validación correcta: Rechazó odontólogo sin matrícula");
     }
     
     /**
@@ -181,7 +181,7 @@ public class OdontologoTestService {
         Assertions.assertNull(resultado1, "ID negativo debe retornar null");
         Assertions.assertNull(resultado2, "ID zero debe retornar null"); 
         Assertions.assertNull(resultado3, "ID inexistente debe retornar null");
-        System.out.println("✅ Manejo correcto de IDs inválidos");
+        System.out.println("Manejo correcto de IDs inválidos");
     }
     
     /**
@@ -204,7 +204,7 @@ public class OdontologoTestService {
             odontologoService.eliminarOdontologo(999);
         }, "El sistema debe manejar IDs inválidos sin crashear");
         
-        System.out.println("✅ Sistema robusto: Maneja eliminaciones inválidas sin crashear");
+        System.out.println("Sistema robusto: Maneja eliminaciones inválidas sin crashear");
     }
     
     /**
@@ -228,6 +228,6 @@ public class OdontologoTestService {
         Assertions.assertNull(resultado1, "Matrícula inexistente debe retornar null");
         Assertions.assertNull(resultado2, "Matrícula vacía debe retornar null");
         Assertions.assertNull(resultado3, "Matrícula null debe retornar null");
-        System.out.println("✅ Búsquedas por matrícula manejan casos no encontrados correctamente");
+        System.out.println("Búsquedas por matrícula manejan casos no encontrados correctamente");
     }
 }
