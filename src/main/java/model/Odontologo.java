@@ -4,12 +4,12 @@ import java.util.Objects;
 
 /**
  * 
- * Entidad Odontologo según especificaciones del Arquitecto:
+ * Entidad Odontologo:
  * - id, nombre, apellido, matricula
  * - matricula: dato clave de auditoría
  * - Requisito para asignación de turnos (futuro)
  * 
- * Implementación completa de la entidad
+ * Implementación completa de la entidad:
  */
 public class Odontologo {
     // Atributos según requerimientos del negocio

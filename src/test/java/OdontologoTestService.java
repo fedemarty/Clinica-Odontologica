@@ -11,8 +11,7 @@ import service.OdontologoService;
  * Tests JUnit según requerimientos:
  * - Paciente: guardar y buscarPorID; listar; actualizar; eliminar; opcionalmente buscarPorString
  * - Odontólogo: guardar y listar; buscarPorID; eliminar; opcionalmente actualizar
- * 
- * Cubre todos los métodos CRUD implementados por estudiantes
+ *
  * Patrón DADO-CUANDO-ENTONCES para claridad
  */
 public class OdontologoTestService {

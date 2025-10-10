@@ -8,9 +8,9 @@ import java.util.List;
 /**
  * 
  * DAO completo para gestión de Odontólogos en H2 Database
- * Implementa patrón DAO según arquitectura definida
+ * Implementación de patrón DAO según arquitectura definida
  * 
- * CRUD COMPLETO IMPLEMENTADO POR ESTUDIANTES:
+ * CRUD COMPLETO:
  * - guardar, buscar, actualizar, eliminar, buscarTodos, buscarPorMatricula
  */
 public class OdontologoDAOH2 implements iDao<Odontologo> {
