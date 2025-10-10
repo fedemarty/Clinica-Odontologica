@@ -6,15 +6,12 @@ import java.sql.*;
 import java.util.List;
 
 /**
- * CLASE NUEVA - TAREA ESTUDIANTES SPRINT 1 EXAMEN
  * 
  * DAO completo para gestión de Odontólogos en H2 Database
  * Implementa patrón DAO según arquitectura definida
  * 
  * CRUD COMPLETO IMPLEMENTADO POR ESTUDIANTES:
  * - guardar, buscar, actualizar, eliminar, buscarTodos, buscarPorMatricula
- * 
- * Preparado para habilitar odontólogos en sistema de turnos (Sprint 3)
  */
 public class OdontologoDAOH2 implements iDao<Odontologo> {
     private static final String SQL_SELECT_ONE = "SELECT * FROM ODONTOLOGOS WHERE ID=?";

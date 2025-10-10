@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import service.OdontologoService;
 
 /**
- * CLASE NUEVA - TESTS PARA ODONTOLOGO SPRINT 1 EXAMEN
+ * TESTS PARA ODONTOLOGO
  * 
  * Tests JUnit según requerimientos:
  * - Paciente: guardar y buscarPorID; listar; actualizar; eliminar; opcionalmente buscarPorString
@@ -18,7 +18,7 @@ import service.OdontologoService;
 public class OdontologoTestService {
     
     /**
-     * TEST REQUERIDO - Guardar Odontólogo
+     * TEST - Guardar Odontólogo
      * Valida CRUD: inserción con ID auto-generado
      * Patrón DADO-CUANDO-ENTONCES
      */

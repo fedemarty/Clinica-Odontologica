@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.util.List;
 
 public class DomicilioDAOH2 implements iDao<Domicilio> {
-    private static final String SQL_DOMICILIOS="SELECT * FROM DOMICILIOS WHERE ID=?";
+    private static final String SQL_DOMICILIOS = "SELECT * FROM DOMICILIOS WHERE ID=?";
 
     @Override
     public Domicilio guardar(Domicilio domicilio) {
@@ -17,11 +17,11 @@ public class DomicilioDAOH2 implements iDao<Domicilio> {
 
     @Override
     public Domicilio buscar(Integer id) {
-        Connection connection= null;
-        Domicilio domicilio= null;
+        Connection connection = null;
+        Domicilio domicilio = null;
         try{
             connection= BD.getConnection();
-            PreparedStatement ps_select_one= connection.prepareStatement(SQL_DOMICILIOS);
+            PreparedStatement ps_select_one = connection.prepareStatement(SQL_DOMICILIOS);
             ps_select_one.setInt(1,id);
             ResultSet rs= ps_select_one.executeQuery();
             while(rs.next()){

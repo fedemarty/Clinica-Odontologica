@@ -13,7 +13,7 @@ import java.util.List;
  * DAO (Data Access Object) para la gestión de Pacientes en base de datos H2
  * Implementa patrón DAO según requerimientos Sprint 1 - Examen
  * 
- * TAREAS ESTUDIANTES - Métodos implementados:
+ * Métodos implementados:
  * - buscarPacientePorId (completo)
  * - actualizarPaciente (implementado)
  * - eliminarPaciente (implementado)
@@ -26,7 +26,7 @@ public class PacienteDAOH2 implements iDao<Paciente>{
 
 
     /**
-     * MÉTODO IMPLEMENTADO - REQUERIMIENTO SPRINT 1
+     * guardar
      * Guarda un nuevo paciente en la base de datos H2
      * Incluye asociación con Domicilio según diseño del Arquitecto
      */
@@ -102,7 +102,7 @@ public class PacienteDAOH2 implements iDao<Paciente>{
     }
 
     /**
-     * TAREA ESTUDIANTES - eliminarPaciente
+     * eliminarPaciente
      * Elimina un paciente de la base de datos por ID
      * Requerimiento: mantener datos consistentes
      */
@@ -136,7 +136,7 @@ public class PacienteDAOH2 implements iDao<Paciente>{
     }
 
     /**
-     * TAREA ESTUDIANTES - actualizarPaciente
+     * actualizarPaciente
      * Actualiza todos los campos de un paciente existente
      * Mantiene relación con Domicilio
      */
@@ -180,7 +180,7 @@ public class PacienteDAOH2 implements iDao<Paciente>{
     }
 
     /**
-     * TAREA ESTUDIANTES - buscarPorString (implementado como buscarPorEmail)
+     * buscarPorString (implementado como buscarPorEmail)
      * Busca paciente por email - funcionalidad para confirmaciones y recordatorios
      * Incluye carga de Domicilio asociado
      */
@@ -223,7 +223,7 @@ public class PacienteDAOH2 implements iDao<Paciente>{
     }
 
     /**
-     * TAREA ESTUDIANTES - buscarTodos (expuesto como listarPacientes en Service)
+     * buscarTodos (expuesto como listarPacientes en Service)
      * Lista todos los pacientes de la base de datos
      * Incluye carga de domicilios para cada paciente
      */

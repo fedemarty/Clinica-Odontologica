@@ -3,14 +3,13 @@ package model;
 import java.util.Objects;
 
 /**
- * CLASE NUEVA - REQUERIMIENTO SPRINT 1 EXAMEN
  * 
  * Entidad Odontologo según especificaciones del Arquitecto:
  * - id, nombre, apellido, matricula
  * - matricula: dato clave de auditoría
  * - Requisito para asignación de turnos (futuro)
  * 
- * TAREA ESTUDIANTES: Implementación completa de la entidad
+ * Implementación completa de la entidad
  */
 public class Odontologo {
     // Atributos según requerimientos del negocio

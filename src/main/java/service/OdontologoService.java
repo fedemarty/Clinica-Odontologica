@@ -6,14 +6,11 @@ import model.Odontologo;
 import java.util.List;
 
 /**
- * CLASE NUEVA - TAREA ESTUDIANTES SPRINT 1 EXAMEN
  * 
  * Service para lógica de negocio de Odontólogos
  * Métodos CRUD equivalentes a PacienteService
  * Validaciones específicas para odontólogos (matrícula obligatoria)
- * 
- * Preparado para migración a MVC en Sprint 2
- * Base para sistema de asignación de turnos en Sprint 3
+ *
  */
 public class OdontologoService {
     private iDao<Odontologo> odontologoiDao;

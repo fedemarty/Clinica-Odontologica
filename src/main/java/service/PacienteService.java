@@ -8,9 +8,6 @@ import java.util.List;
 /**
  * Service para lógica de negocio de Pacientes
  * Actúa como puente entre controladores y DAOs
- * Preparado para migración a MVC en Sprint 2
- * 
- * MÉTODOS COMPLETADOS POR ESTUDIANTES:
  * - actualizarPaciente, eliminarPaciente, buscarPorEmail
  */
 public class PacienteService {
@@ -30,7 +27,7 @@ public class PacienteService {
     }
     
     /**
-     * TAREA ESTUDIANTES - actualizarPaciente
+     * actualizarPaciente
      * Lógica de negocio para actualización de pacientes
      * Incluye validaciones básicas
      */
@@ -45,7 +42,7 @@ public class PacienteService {
     }
     
     /**
-     * TAREA ESTUDIANTES - eliminarPaciente
+     * eliminarPaciente
      * Lógica de negocio para eliminación por ID
      * Mantiene datos consistentes según requerimiento
      */
@@ -60,7 +57,7 @@ public class PacienteService {
     }
     
     /**
-     * TAREA ESTUDIANTES - buscarPorString (implementado como buscarPorEmail)
+     * buscarPorString (implementado como buscarPorEmail)
      * Búsqueda por email para confirmaciones y recordatorios
      * Funcionalidad clave para la clínica
      */
