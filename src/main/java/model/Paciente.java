@@ -1,17 +1,48 @@
-package model;
+package com.clinicaodontologica.entity;
 
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
+/**
+ * Entidad Paciente - JPA Entity
+ * Migración de model.Paciente a Spring Boot + JPA
+ * 
+ * Mantiene relación con Domicilio (@OneToOne con CascadeType.ALL)
+ * Constructores duales según patrón establecido
+ */
+@Entity
+@Table(name = "pacientes")
 public class Paciente {
-    private Integer id;
-    private String  nombre;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column(nullable = false, length = 100)
+    private String nombre;
+    
+    @Column(nullable = false, length = 100)
     private String apellido;
+    
+    @Column(nullable = false)
     private Integer numeroContacto;
+    
+    @Column(nullable = false)
     private LocalDate fechaIngreso;
+    
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "domicilio_id", referencedColumnName = "id")
     private Domicilio domicilio;
+    
+    @Column(nullable = false, unique = true, length = 100)
     private String email;
 
-    public Paciente(Integer id, String nombre, String apellido, Integer numeroContacto, LocalDate fechaIngreso, Domicilio domicilio, String email) {
+    // Constructor vacío - Requerido por JPA
+    public Paciente() {
+    }
+
+    // Constructor completo - Para recuperación de BD
+    public Paciente(Long id, String nombre, String apellido, Integer numeroContacto, LocalDate fechaIngreso, Domicilio domicilio, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.numeroContacto = numeroContacto;
@@ -21,6 +52,7 @@ public class Paciente {
         this.id = id;
     }
 
+    // Constructor sin ID - Para nuevas inserciones
     public Paciente(String nombre, String apellido, Integer numeroContacto, LocalDate fechaIngreso, Domicilio domicilio, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -30,11 +62,11 @@ public class Paciente {
         this.email = email;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

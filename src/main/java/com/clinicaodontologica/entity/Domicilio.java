@@ -3,39 +3,32 @@ package com.clinicaodontologica.entity;
 import jakarta.persistence.*;
 
 /**
- * Entidad Domicilio - JPA Entity
- * Migración de model.Domicilio a Spring Boot + JPA
- * 
- * Mantiene constructores duales según patrón establecido:
- * - Constructor completo: para recuperación de BD
- * - Constructor sin ID: para nuevas inserciones
+ * Entidad JPA que representa un domicilio en el sistema de clínica odontológica
+ * Mantiene compatibilidad con la estructura de BD original
  */
 @Entity
-@Table(name = "domicilios")
+@Table(name = "DOMICILIOS")
 public class Domicilio {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "ID")
+    private Integer id;
     
-    @Column(nullable = false, length = 100)
+    @Column(name = "CALLE", nullable = false, length = 255)
     private String calle;
     
-    @Column(nullable = false)
+    @Column(name = "NUMERO", nullable = false)
     private Integer numero;
     
-    @Column(nullable = false, length = 100)
+    @Column(name = "LOCALIDAD", nullable = false, length = 255)
     private String localidad;
     
-    @Column(nullable = false, length = 100)
+    @Column(name = "PROVINCIA", nullable = false, length = 255)
     private String provincia;
 
-    // Constructor vacío requerido por JPA
-    public Domicilio() {
-    }
-
-    // Constructor completo - Para recuperación de BD
-    public Domicilio(Long id, String calle, Integer numero, String localidad, String provincia) {
+    // Constructor con ID para recuperación de BD
+    public Domicilio(Integer id, String calle, Integer numero, String localidad, String provincia) {
         this.id = id;
         this.calle = calle;
         this.numero = numero;
@@ -43,7 +36,7 @@ public class Domicilio {
         this.provincia = provincia;
     }
 
-    // Constructor sin ID - Para nuevas inserciones
+    // Constructor sin ID para nuevas inserciones  
     public Domicilio(String calle, Integer numero, String localidad, String provincia) {
         this.calle = calle;
         this.numero = numero;
@@ -51,11 +44,16 @@ public class Domicilio {
         this.provincia = provincia;
     }
 
-    public Long getId() {
+    // Constructor por defecto requerido por JPA
+    public Domicilio() {
+    }
+
+    // Getters y Setters
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -89,5 +87,16 @@ public class Domicilio {
 
     public void setProvincia(String provincia) {
         this.provincia = provincia;
+    }
+
+    @Override
+    public String toString() {
+        return "Domicilio{" +
+                "id=" + id +
+                ", calle='" + calle + '\'' +
+                ", numero=" + numero +
+                ", localidad='" + localidad + '\'' +
+                ", provincia='" + provincia + '\'' +
+                '}';
     }
 }

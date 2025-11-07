@@ -46,7 +46,7 @@ public class OdontologoService {
         return odontologoRepository.save(odontologo);
     }
 
-    public Odontologo buscarOdontologoPorId(Long id) {
+    public Odontologo buscarOdontologoPorId(Integer id) {
         if (id == null || id <= 0) {
             System.out.println("Error: ID debe ser válido");
             return null;
@@ -75,7 +75,7 @@ public class OdontologoService {
         return odontologoRepository.save(odontologo);
     }
 
-    public void eliminarOdontologo(Long id) {
+    public void eliminarOdontologo(Integer id) {
         if (id == null || id <= 0) {
             System.out.println("Error: ID debe ser válido");
             return;

@@ -20,6 +20,7 @@ public class PacienteService {
     
     @Autowired
     private PacienteRepository pacienteRepository;
+    
     public Paciente guardarPaciente(Paciente paciente){
         // Validación de duplicados: email único
         if (pacienteRepository.existsByEmail(paciente.getEmail())) {
@@ -29,7 +30,7 @@ public class PacienteService {
         return pacienteRepository.save(paciente);
     }
     
-    public Paciente buscarPacientePorId(Long id){
+    public Paciente buscarPacientePorId(Integer id){
         if (id == null || id <= 0) {
             System.out.println("Error: ID debe ser válido");
             return null;
@@ -67,7 +68,7 @@ public class PacienteService {
      * Lógica de negocio para eliminación por ID
      * Mantiene datos consistentes según requerimiento
      */
-    public void eliminarPaciente(Long id){
+    public void eliminarPaciente(Integer id){
         // Validación de negocio: ID válido
         if (id == null || id <= 0) {
             System.out.println("Error: ID debe ser válido");

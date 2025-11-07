@@ -1,29 +1,41 @@
-package model;
+package com.clinicaodontologica.entity;
 
+import jakarta.persistence.*;
 import java.util.Objects;
 
 /**
+ * Entidad Odontologo - JPA Entity
+ * Migración de model.Odontologo a Spring Boot + JPA
  * 
- * Entidad Odontologo:
  * - id, nombre, apellido, matricula
- * - matricula: dato clave de auditoría
+ * - matricula: dato clave de auditoría (UNIQUE)
  * - Requisito para asignación de turnos (futuro)
  * 
- * Implementación completa de la entidad:
+ * Mantiene constructores duales según patrón establecido
  */
+@Entity
+@Table(name = "odontologos")
 public class Odontologo {
-    // Atributos según requerimientos del negocio
-    private Integer id;           // ID auto-generado por H2
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;           // ID auto-generado por JPA
+    
+    @Column(nullable = false, length = 100)
     private String nombre;        // Identidad profesional
+    
+    @Column(nullable = false, length = 100)
     private String apellido;      // Identidad profesional  
+    
+    @Column(nullable = false, unique = true, length = 50)
     private String matricula;     // Dato clave de auditoría - UNIQUE en BD
 
-    // Constructor vacío - Requerido por convenciones Java
+    // Constructor vacío - Requerido por JPA
     public Odontologo() {
     }
 
     // Constructor completo - Para objetos recuperados de BD
-    public Odontologo(Integer id, String nombre, String apellido, String matricula) {
+    public Odontologo(Long id, String nombre, String apellido, String matricula) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -38,11 +50,11 @@ public class Odontologo {
     }
 
     // Getters y Setters
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
