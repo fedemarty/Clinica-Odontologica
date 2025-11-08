@@ -25,7 +25,7 @@ public class PacienteService {
         // Validación de duplicados: email único
         if (pacienteRepository.existsByEmail(paciente.getEmail())) {
             System.out.println("Error: Ya existe un paciente con email: " + paciente.getEmail());
-            return null;
+            throw new IllegalArgumentException("Ya existe un paciente con el email: " + paciente.getEmail());
         }
         return pacienteRepository.save(paciente);
     }

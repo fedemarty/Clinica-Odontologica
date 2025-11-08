@@ -56,14 +56,12 @@ public class DatosIniciales implements ApplicationRunner {
     }
     
     private void crearDatosIniciales() {
-        // Crear domicilios de prueba
+        // Crear domicilios de prueba (sin persistir - CASCADE lo hará automáticamente)
         Domicilio domicilio1 = new Domicilio("siempre viva", 723, "Springfield", "USA");
         Domicilio domicilio2 = new Domicilio("Calle falsa", 123, "Springfield", "USA");
         
-        domicilio1 = domicilioRepository.save(domicilio1);
-        domicilio2 = domicilioRepository.save(domicilio2);
-        
         // Crear pacientes de prueba (manteniendo datos originales)
+        // El CASCADE.ALL persistirá automáticamente los domicilios
         Paciente paciente1 = new Paciente();
         paciente1.setNombre("Homero");
         paciente1.setApellido("Simpson");
@@ -80,6 +78,7 @@ public class DatosIniciales implements ApplicationRunner {
         paciente2.setFechaIngreso(LocalDate.of(2025, 8, 8));
         paciente2.setDomicilio(domicilio2);
         
+        // Al guardar el paciente, el CASCADE persiste automáticamente el domicilio
         paciente1 = pacienteRepository.save(paciente1);
         paciente2 = pacienteRepository.save(paciente2);
         

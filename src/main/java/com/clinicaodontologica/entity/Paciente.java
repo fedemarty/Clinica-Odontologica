@@ -31,7 +31,7 @@ public class Paciente {
     @Column(name = "FECHA_INGRESO", nullable = false)
     private LocalDate fechaIngreso;
     
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "DOMICILIO_ID")
     private Domicilio domicilio;
 
