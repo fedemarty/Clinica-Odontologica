@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Odontológica - Sonrisa Feliz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-section {
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card-header {
+            border-radius: 15px 15px 0 0 !important;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .btn-custom {
+            border-radius: 50px;
+            padding: 15px 40px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .icon-large {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <h1 class="display-3 fw-bold"><i class="fas fa-tooth"></i> Sonrisa Feliz</h1>
+        <p class="lead">Sistema de Gestión de Clínica Odontológica</p>
+        <p class="mb-0">Sprint 1 - Arquitectura Spring Boot + JPA + H2</p>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Pacientes -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <i class="fas fa-user-injured icon-large"></i>
+                        <h3>Pacientes</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text">Gestión completa de pacientes: registrar, consultar, actualizar y eliminar.</p>
+                        <a href="pacientes.html" class="btn btn-primary btn-custom w-100">
+                            <i class="fas fa-arrow-right"></i> Gestionar Pacientes
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Odontólogos -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-header bg-success text-white text-center">
+                        <i class="fas fa-user-md icon-large"></i>
+                        <h3>Odontólogos</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text">Gestión completa de odontólogos: matricula, datos personales y disponibilidad.</p>
+                        <a href="odontologos.html" class="btn btn-success btn-custom w-100">
+                            <i class="fas fa-arrow-right"></i> Gestionar Odontólogos
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Turnos -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-header bg-warning text-dark text-center">
+                        <i class="fas fa-calendar-check icon-large"></i>
+                        <h3>Turnos</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text">Gestión de turnos: agendar citas, consultar agenda y administrar horarios.</p>
+                        <a href="turnos.html" class="btn btn-warning btn-custom w-100">
+                            <i class="fas fa-arrow-right"></i> Gestionar Turnos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información adicional -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card bg-white">
+                    <div class="card-body text-center">
+                        <h5 class="card-title"><i class="fas fa-info-circle"></i> Características del Sistema</h5>
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <i class="fas fa-database text-primary" style="font-size: 2rem;"></i>
+                                <p class="mt-2"><strong>Base de Datos H2</strong><br>Persistencia en memoria con Spring Data JPA</p>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="fas fa-code text-success" style="font-size: 2rem;"></i>
+                                <p class="mt-2"><strong>API REST</strong><br>Endpoints HTTP para todas las operaciones CRUD</p>
+                            </div>
+                            <div class="col-md-4">
+                                <i class="fas fa-shield-alt text-warning" style="font-size: 2rem;"></i>
+                                <p class="mt-2"><strong>Logging con Log4j</strong><br>Trazabilidad completa de operaciones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center text-white mt-5 pb-4">
+        <p>&copy; 2025 Clínica Odontológica Sonrisa Feliz | Proyecto Educativo - Microservicios</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
