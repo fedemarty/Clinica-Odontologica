@@ -137,11 +137,10 @@ public class PacienteTestService {
             "homer@disney.com", LocalDate.now(), domicilio // Email duplicado
         );
         
-        //CUANDO
-        Paciente resultado = pacienteService.guardarPaciente(pacienteDuplicado);
-        
-        //ENTONCES
-        Assertions.assertTrue(resultado == null); // No debe guardar duplicados
+        //CUANDO & ENTONCES - Debe lanzar excepción por email duplicado
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            pacienteService.guardarPaciente(pacienteDuplicado);
+        });
     }
     
     @Test

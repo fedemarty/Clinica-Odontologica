@@ -29,6 +29,7 @@ public class PacienteService {
         }
         return pacienteRepository.save(paciente);
     }
+
     
     public Paciente buscarPacientePorId(Integer id){
         if (id == null || id <= 0) {
